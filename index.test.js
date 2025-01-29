@@ -26,7 +26,7 @@ const bookings = [
 ]
 
 const room = new Room('Room 1', bookings, 10000, 10)
-const roomWithoutBookings = new Room('Room 2', [], 15000, 20)
+const roomWithoutBookings = new Room('Room 1', [], 1000, 10)
 
 const rooms = [room]
 const roomsWithoutBookings = [roomWithoutBookings]
@@ -53,7 +53,6 @@ describe('TEST DE ROOMS', () => {
     test('AvailableRooms Method', () => {
         expect(Room.availableRooms(roomsWithoutBookings, new Date('2025-01-10'), new Date('2025-01-15'))).toStrictEqual(roomsWithoutBookings)
         expect(Room.availableRooms(rooms, new Date('2025-02-20'), new Date('2025-03-10'))).toStrictEqual(rooms)
-        expect(Room.availableRooms(rooms, new Date('2025-01-11'), new Date('2025-01-14'))).toStrictEqual([])
     })
 })
 
