@@ -56,7 +56,7 @@ describe('TEST DE ROOMS', () => {
         const rooms = [new Room('Room 1', bookings, 10000, 10)]
         expect(Room.totalOccupancyPercentage(roomsWithoutBookings, new Date('2025-01-27'), new Date('2025-01-30'))).toBe(0)
         expect(Room.totalOccupancyPercentage(rooms, new Date('2025-01-27'), new Date('2025-01-29'))).toBe(100)
-        expect(Room.totalOccupancyPercentage(rooms, new Date('2025-01-29'), new Date('2025-01-31'))).toBe(50)
+        expect(Room.totalOccupancyPercentage(rooms, new Date('2025-01-28'), new Date('2025-01-31'))).toBe(75)
     })
 
     test('AvailableRooms Method', () => {
@@ -83,8 +83,8 @@ describe('TEST DE BOOKINGS', () => {
     test('Booking Create', () => {
         const room = new Room('Room 1', [], 10000, 10)
         const booking = new Booking('Alberto', 'alberto@gmail.com', new Date('2025-01-01'), new Date('2025-01-06'), 15, room)
-        expect(booking.name).toBe('Room 1')
-        expect(booking.email).toBe()
+        expect(booking.name).toBe('Alberto')
+        expect(booking.email).toBe('alberto@gmail.com')
         expect(booking.checkIn).toEqual(new Date('2025-01-01'))
         expect(booking.checkOut).toEqual(new Date('2025-01-06'))
         expect(booking.discount).toBe(15)
