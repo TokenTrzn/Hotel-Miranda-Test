@@ -64,7 +64,7 @@ class Booking {
         this.room = room
     }
 
-    get fee() {
+    fee() {
         const totalNights = (this.checkOut - this.checkIn) / (1000 * 60 * 60 * 24)
         const roomRate = this.room.rate - (this.room.rate * this.room.discount / 100)
         const discountedRate = roomRate - (roomRate * this.discount / 100)
